@@ -15,18 +15,22 @@ class TimeTable extends React.Component {
       parseInt(this.state.value) ===
       this.state.firstNum * this.state.secondNum
     ) {
-      this.setState({
-        result: this.state.value + " Correct !",
-        firstNum: Math.ceil(Math.random() * 9),
-        secondNum: Math.ceil(Math.random() * 9),
-        value: "",
+      this.setState((prevState) => {
+        return {
+          result: prevState.value + " Correct !",
+          firstNum: Math.ceil(Math.random() * 9),
+          secondNum: Math.ceil(Math.random() * 9),
+          value: "",
+        };
       });
     } else {
-      this.setState({
-        result: this.state.value + " Not Correct !",
-        firstNum: Math.ceil(Math.random() * 9),
-        secondNum: Math.ceil(Math.random() * 9),
-        value: "",
+      this.setState((prevState) => {
+        return {
+          result: prevState.value + " Not Correct !",
+          firstNum: Math.ceil(Math.random() * 9),
+          secondNum: Math.ceil(Math.random() * 9),
+          value: "",
+        };
       });
     }
   };
