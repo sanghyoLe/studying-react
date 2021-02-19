@@ -23,6 +23,7 @@ class TimeTable extends React.Component {
           value: "",
         };
       });
+      this.input.focus();
     } else {
       this.setState((prevState) => {
         return {
@@ -32,10 +33,15 @@ class TimeTable extends React.Component {
           value: "",
         };
       });
+      this.input.focus();
     }
+  };
+  onRefInput = (c) => {
+    this.input = c;
   };
   onChange = (e) => this.setState({ value: e.target.value });
   render() {
+    console.log("렌더링");
     return (
       <>
         <div>
@@ -43,6 +49,7 @@ class TimeTable extends React.Component {
         </div>
         <form onSubmit={this.onSubmit}>
           <input
+            ref={this.onRefInput}
             type="nubmer"
             value={this.state.value}
             onChange={this.onChange}
