@@ -3,19 +3,19 @@ class LikeButton extends React.Component {
     super(props);
     this.state = {
       liked: false,
+      value: "./image/heart-outline.png",
     };
   }
-
+  onClick = () => {
+    if (this.state.liked === false) {
+      this.setState({ liked: true, value: "./image/heart-full.png" });
+    } else this.setState({ liked: false, value: "./image/heart-outline.png" });
+  };
   render() {
     return (
-      <button
-        type="submit"
-        onClick={() => {
-          this.setState({ liked: true });
-        }}
-      >
-        {this.state.liked === true ? "Liked" : "Like"}
-      </button>
+ 
+        <img class="heart" src={this.state.value} onClick={this.onClick}/>
+  
     );
     // e(
     //   "button",
@@ -30,4 +30,12 @@ class LikeButton extends React.Component {
   }
 }
 
-ReactDOM.render(<div><LikeButton /><LikeButton /><LikeButton /><LikeButton /></div>, document.querySelector("#root"));
+ReactDOM.render(
+  <div>
+    <LikeButton />
+    <LikeButton />
+    <LikeButton />
+    <LikeButton />
+  </div>,
+  document.querySelector("#root")
+);

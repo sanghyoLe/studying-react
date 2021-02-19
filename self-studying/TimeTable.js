@@ -1,5 +1,5 @@
 // TIME TABLES
-class GuGuDan extends React.Component {
+class TimeTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class GuGuDan extends React.Component {
       });
     } else {
       this.setState({
-        result: this.state.value + "Not Correct !",
+        result: this.state.value + " Not Correct !",
         firstNum: Math.ceil(Math.random() * 9),
         secondNum: Math.ceil(Math.random() * 9),
         value: "",
@@ -33,7 +33,7 @@ class GuGuDan extends React.Component {
   onChange = (e) => this.setState({ value: e.target.value });
   render() {
     return (
-      <div>
+      <>
         <div>
           {this.state.firstNum} * {this.state.secondNum}?
         </div>
@@ -46,9 +46,9 @@ class GuGuDan extends React.Component {
           <button>submit</button>
         </form>
         <div>{this.state.result}</div>
-      </div>
+      </>
     );
   }
 }
 
-ReactDOM.render(<GuGuDan />, document.querySelector("#root"));
+ReactDOM.render(<TimeTable />, document.querySelector("#root"));
