@@ -1,3 +1,4 @@
+// TIME TABLES
 class GuGuDan extends React.Component {
   constructor(props) {
     super(props);
