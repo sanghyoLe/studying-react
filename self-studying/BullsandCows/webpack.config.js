@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 module.exports = {
-  name: 'wordrelay-setting',
+  name: 'bullsandcows-setting',
   mode: 'development', // 실서비스 : production
   devtool : 'eval', 
   resolve: {
@@ -26,10 +26,10 @@ module.exports = {
                 debug: true,
               }],
             "@babel/preset-react",
-            "@quasar/babel-preset-app",
+            
             
           ],
-          sourceType: "unambiguous",
+         
           plugins: ['@babel/plugin-proposal-class-properties',
                     'react-refresh/babel'],
         },

@@ -54,3 +54,4 @@ class WordRelay extends Component {
 }
 
 module.exports = WordRelay;
+
