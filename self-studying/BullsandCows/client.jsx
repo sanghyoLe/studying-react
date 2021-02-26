@@ -1,4 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-import BullsandCows from './BullsandCows'
-ReactDOM.render(<BullsandCows/>, document.querySelector('#root'));
+//class component
+// import BullsandCows from './BullsandCows'
+import BullsandCows_hooks from './BullsandCows_hooks'
+ReactDOM.render(<BullsandCows_hooks/>, document.querySelector('#root'));
