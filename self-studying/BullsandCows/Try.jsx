@@ -1,7 +1,7 @@
-// class component
-// import React, {Component} from 'react';
+//class component
+// import React, {PureComponent} from 'react';
 
-// class Try extends Component {
+// class Try extends PureComponent {
 //     render() {
 //         return (
 //             <li>
@@ -13,15 +13,15 @@
 // }
 // export default Try;
 
-// hooks component
-import React from 'react';
-const Try = ({tryInfo}) => {
+//hooks component
+import React,{memo} from 'react';
+const Try = memo(({tryInfo}) => {
   return (
     <li>
       <div>{tryInfo.try}</div>
       <div>{tryInfo.result}</div>
     </li>
   );
-};
+});
 
 export default Try;

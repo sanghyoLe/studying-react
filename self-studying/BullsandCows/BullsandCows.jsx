@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Try from './Try';
 function getNumbers() {
   // 숫자 네 개를 겹치지 않고 랜덤하게 뽑는 함수
@@ -12,7 +12,7 @@ function getNumbers() {
   return array;
 }
 
-class BullsandCows extends Component {
+class BullsandCows extends PureComponent {
     state = {
         result: "",
         value: "",
@@ -91,3 +91,4 @@ class BullsandCows extends Component {
 }
 
 export default BullsandCows;
+
