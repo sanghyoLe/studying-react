@@ -33,6 +33,7 @@ class BullsandCows extends PureComponent {
             answer: getNumbers(),
             tries:[],
         });
+        this.inputRef.focus();
       } else {
         const answerArray = this.state.value.split('').map((v)=>parseInt(v));
         let strike =0;
@@ -47,6 +48,7 @@ class BullsandCows extends PureComponent {
                 answer: getNumbers(),
                 tries:[],
             });
+            this.inputRef.focus();
         } else {
             for(let i = 0 ; i < 4 ; i+= 1 ) {
                 if(answerArray[i] === this.state.answer[i]) {
@@ -65,13 +67,17 @@ class BullsandCows extends PureComponent {
   onChangeInput = (e) => {
       this.setState({value:e.target.value});
   };
-
+  inputRef;
+  onInputRef = (c) =>{
+    this.inputRef = c;
+  }
   render() {
     return ( 
       <>
         <h1>{this.state.result}</h1>
         <form onSubmit={this.onSubmitForm}>
           <input
+            ref = {this.onInputRef}
             maxLength={4}
             value={this.state.value}
             onChange={this.onChangeInput} // hi 
